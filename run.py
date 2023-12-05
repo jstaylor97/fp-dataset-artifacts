@@ -72,7 +72,7 @@ def main():
         dataset = datasets.load_dataset(*dataset_id)
     
     # NLI models need to have the output label count specified (label 0 is "entailed", 1 is "neutral", and 2 is "contradiction")
-    task_kwargs = {'num_labels': 3} if args.task == 'nli' else {}
+    task_kwargs = {'num_labels': 2} if args.task == 'nli' else {}
 
     # Here we select the right model fine-tuning head
     model_classes = {'qa': AutoModelForQuestionAnswering,
